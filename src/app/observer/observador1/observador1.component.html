@@ -1,0 +1,27 @@
+<p>observador1 works!</p>
+
+<p> valor observado: {{ valorObservado }} </p>
+
+<p> LocalObjetoObservavel:  {{ LocalObjetoObservavel$ }} </p>
+
+<p> LocalObjetoObservavelSwitc:  {{ valorObservadoSwitch }} </p>
+
+<p> valorObservadoIP:  {{ valorObservadoIP }} </p>
+
+<p> valorObservadoURL:  {{ valorObservadoURL }} </p>
+
+LocalObjetoObservavel$
+
+
+
+    <div *ngIf="ServicoObjetoObservavel | async as variavel; else loading">
+		LocalObjetoObservavel Async $ - carregado  {{ variavel }} </div>
+
+
+<!--
+<li *ngFor="let employee of LocalObjetoObservavel$ | async">
+        	<b>{{employee}}</b> -
+  </li>
+-->
+
+    <ng-template #loading>valor observado - ainda não carregado </ng-template>

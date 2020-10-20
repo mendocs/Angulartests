@@ -1,0 +1,59 @@
+<p>from-data-driven works!</p>
+
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+	<input formControlName="nomeControle"  #campo1  >
+
+	<input type="checkbox" formControlName="ControleCheck"  > checkteste
+
+
+	<div *ngIf="formulario.get('nomeControle').hasError('required') && formulario.get('nomeControle').touched ">msg erro</div>
+
+	<div *ngIf="formulario.get('nomeControle').hasError('required') ">msg1 erro</div>
+
+
+	<app-iput-field  class="col-sm-12" formControlName="nome"
+    [classeCss]="aplicaCssErro('nome')"
+    id="nome" label="Nome" [control]="formulario.get('nome')"
+  ></app-iput-field>
+
+
+	<app-iput-field  class="col-sm-12" formControlName="chkConfirma" type="checkbox"
+    [classeCss]="aplicaCssErro('chkConfirma')"
+    id="chkConfirma" label="chkConfirma" [control]="formulario.get('chkConfirma')"
+  ></app-iput-field>
+
+  <h2>Selecione o Pais: </h2>
+  <!--
+  <select class="form-control">
+	 <option *ngFor="let pais of paises" value= {{pais.id}}>
+	   {{pais.Nome}}
+	 </option>
+  </select>
+-->
+
+  <select multiple  class="form-control"  id="sel1" formControlName="paisControle">
+  <!--(change)="onSelect($event.target.value)"  -->
+    <option value="0">--Selecione--</option>
+    <option *ngFor="let pais of paises" value= {{pais.id}}> {{pais.Nome}} </option>
+ </select>
+
+ <br>
+
+ <div>
+  <select class="form-control">
+    <option *ngIf='paisSelecionado.id == 0' value="0">--Selecione--</option>
+    <option *ngFor="let cidade of cidades" value= {{cidade.id}}> {{cidade.Nome}} </option>
+  </select>
+ </div>
+
+	<button typ="sunmmit"> submit </button>
+	<button typ="button" (click) = 'resetar()'> reset </button>
+
+	<app-form-debug [form]="formulario"></app-form-debug>
+</form>
+
+ttt
+{{mapCidades(1)}}
+

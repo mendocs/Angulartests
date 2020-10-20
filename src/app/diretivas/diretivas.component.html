@@ -1,0 +1,37 @@
+<p>diretivas works!</p>
+
+<input type="text" #txtConteudoVariavel>
+<input type="button" (click)="onMudaVariavel(txtConteudoVariavel.value)" value="Muda Variavel">
+
+<p>if</p>
+<div *ngIf = "verificaCondicao()"> mostra se o campo for igual a palavra base </div>
+
+<p></p>
+<div *ngIf= "verificaCondicao(); then thenBlock else elseBlock"></div>
+<ng-template #thenBlock> mostra o bloco #thenBlock </ng-template>
+<ng-template #elseBlock> mostra o bloco #elseBlock</ng-template>
+
+<p>ngSwitch</p>
+
+<ul [ngSwitch]="variavelbase">
+	<li *ngSwitchCase="'Groot'">Groot</li>
+	<li *ngSwitchCase="'Ironman'">Ironman</li>
+	<li *ngSwitchCase="'Hulk'">Hulk</li>
+	<li *ngSwitchCase="'Thor'">Thor</li>
+	<li *ngSwitchCase="'Spiderman'">Spiderman</li>
+	<li *ngSwitchDefault>Batman</li>
+  </ul>
+
+  <p>  *ngfor</p>
+array {{variavelArray}}
+
+  <ul>
+    <li *ngFor="let variavel of variavelArray">
+      {{ variavel }}
+      </li>
+  </ul>
+
+  <p>  *diretivaPropria</p>
+
+  <div *appCondicaoFalsa = "verificaCondicao()"> mostra se o campo for diferente a palavra 'base' </div>
+

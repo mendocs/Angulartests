@@ -1,0 +1,258 @@
+<p>boot works!</p>
+
+xs: pink col1;;
+sm: azul, col2;;
+md: amarelo, col4;;
+lg: verde, col8;;
+xl: cinza com12
+
+<p> exemplo de margem  </p>
+<div class="row mx-md-n5">
+	<div class="col py-3 px-md-5 border bg-light">Custom column padding</div>
+	<div class="col py-3 px-md-5 border bg-light">Custom column padding</div>
+  </div>
+
+
+<p> exemplo de colunas  </p>
+<div class="col-xl-12 col-lg-8 col-md-4 col-sm-2 col-1 bg-info"> col-xl-12; col-lg-8; col-md-4; col-sm-2; col-1 </div>
+<div class="container">
+	<div class="row">
+	  <div class="col-sm-4">
+		<h3>Column 1</h3>
+		<p>Lorem ipsum dolor..</p>
+	  </div>
+	  <div class="col-sm-4">
+		<h3>Column 2</h3>
+		<p>Lorem ipsum dolor..</p>
+	  </div>
+	  <div class="col-sm-4">
+		<h3>Column 3</h3>
+		<p>Lorem ipsum dolor..</p>
+	  </div>
+	</div>
+  </div>
+
+
+
+  <div *ngFor="let alert of alerts">
+	<alert [type]="alert.type" [dismissible]="dismissible" (onClosed)="onClosed(alert)">{{ alert.msg }}</alert>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="dismissible = !dismissible">Toggle dismissible</button>
+  <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+
+
+<br><br>
+
+
+<span class="badge badge-pill badge-success">Success</span>
+
+<button type="button" class="btn btn-primary">
+	Messages <span class="badge badge-light">4</span>
+  </button>
+
+  <br><br>
+
+  <button class="btn btn-primary">
+  <ngx-bootstrap-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="small"
+  color="#fff"
+  type="border"
+  loadingText = "Carregando"
+  loaderTemplate = "<img src='assets/images/spinner/giphy.gif' />"
+  isButtonSpinner = true
+>
+</ngx-bootstrap-spinner>
+botão spinner
+</button>
+
+<img src='assets/images/spinner/giphy.gif' />
+
+  <div class="spinner-border text-muted"></div>
+
+  <button class="btn btn-primary">
+	<span class="spinner-border spinner-border-sm"></span>
+	Loading..
+  </button>
+
+  <div class="col-sm-4">
+    <div class="mb-2">
+      <progressbar [value]="22" type="warning" [striped]="true">22%</progressbar>
+    </div>
+  </div>
+
+<br><br>
+<button type="button" class="btn btn-primary"
+        tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Simple demo
+</button>
+
+<p>cards</p>
+
+<div class="card">
+	<div class="card-header">Header</div>
+	<div class="card-body">Content</div>
+	<div class="card-footer">Footer</div>
+  </div>
+
+
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+
+
+<button type="button" class="btn btn-primary" (click)="openModal(template1)">Open modal</button>
+<br><br>
+<pre class="card card-block card-header">{{message}}</pre>
+<ng-template #template1>
+  <div class="modal-body text-center">
+    <p>Do you want to confirm?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>
+
+
+<accordion>
+	<accordion-group heading="Dynamic Body Content">
+	  <p>The body of the accordion group grows to fit the contents</p>
+	  <button type="button" class="btn btn-primary btn-sm" (click)="addItem()">Add
+		Item
+	  </button>
+	  <div *ngFor="let item of items">{{item}}</div>
+	</accordion-group>
+	<accordion-group heading="Content 2">
+	  <p>accordion 2</p>
+	</accordion-group>
+	<accordion-group heading="Content 3">
+	  <p>accordion 3</p>
+	</accordion-group>
+  </accordion>
+
+
+  <p>Formulario</p>
+  <form action="/action_page.php" class="was-validated">
+	<div class="form-group">
+	  <label for="uname">Username:</label>
+	  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+	  <div class="valid-feedback">Valid.</div>
+	  <div class="invalid-feedback">Please fill out this field.</div>
+	</div>
+	<div class="form-group">
+	  <label for="pwd">Password:</label>
+	  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+	  <div class="valid-feedback">Valid.</div>
+	  <div class="invalid-feedback">Please fill out this field.</div>
+	</div>
+	<div class="form-group form-check">
+	  <label class="form-check-label">
+		<input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+		<div class="valid-feedback">Valid.</div>
+		<div class="invalid-feedback">Check this checkbox to continue.</div>
+	  </label>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<p>TypeHead async array local</p>
+
+
+
+<pre class="card card-block card-header">Model: {{ asyncSelected | json }}</pre>
+
+<input [(ngModel)]="asyncSelected"
+       [typeahead]="dataSource"
+       [typeaheadAsync]="true"
+       typeaheadOptionField="Nome"
+       (typeaheadLoading)="changeTypeaheadLoading($event)"
+       placeholder="Locations loaded via observable"
+       class="form-control">
+
+
+
+	   <p>TypeHead async array http/p>
+
+	   <pre class="card card-block card-header">Model: {{ search | json }}</pre>
+
+	   <input [(ngModel)]="search"
+			  typeaheadOptionField="Nome"
+			  [typeahead]="suggestions$"
+			  [typeaheadAsync]="true"
+			  class="form-control"
+			  placeholder="Enter GitHub username"
+			  [optionsListTemplate]="customListTemplate">
+
+
+			  <ng-template #customListTemplate let-matches="matches" let-query="query" let-typeaheadTemplateMethods>
+				<ul class="custom-list-group" [class.dropdown-menu]="isBs3">
+				  <li class="custom-list-group-item"
+					  *ngFor="let match of matches"
+					  [class.active]="typeaheadTemplateMethods.isActive(match)"
+					  (click)="typeaheadTemplateMethods.selectMatch(match, $event)"
+					  (mouseenter)="typeaheadTemplateMethods.selectActive(match)">
+					{{ match }}
+				  </li>
+				</ul>
+			  </ng-template>
+
+
+
+	   <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+		 {{ errorMessage }}
+	   </div>
+
+	<div class="container">
+
+	   <p> image round </p> <img src="assets/images/card/cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre">
+	</div>
+
+
+<p>Card</p>
+
+<div class="card" style="width:400px">
+	<img class="card-img-top" src="assets/images/card/brasil.jpg" alt="Card image">
+
+	<div class="card-body">
+	  <h4 class="card-title">John Doe</h4>
+	  <p class="card-text">Some example text.</p>
+	  <a href="#" class="btn btn-primary">See Profile</a>
+	</div>
+  </div>
+
+
+
+  <p> Carrosel</p>
+
+  <carousel>
+	<slide>
+	  <img src="assets/images/carrosel/imagem1.jpg" alt="first slide" style="display: block; width: 100%;">
+	  <div class="carousel-caption d-none d-md-block">
+		<h3>First slide label</h3>
+		<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+	  </div>
+	</slide>
+	<slide>
+	  <img src="assets/images/carrosel/imagem2.jpg" alt="second slide" style="display: block; width: 100%;">
+	  <div class="carousel-caption d-none d-md-block">
+		<h3>Second slide label</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	  </div>
+	</slide>
+	<slide>
+	  <img src="assets/images/carrosel/imagem3.jpg" alt="third slide" style="display: block; width: 100%;">
+	  <div class="carousel-caption d-none d-md-block">
+		<h3>Third slide label</h3>
+		<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+	  </div>
+	</slide>
+  </carousel>

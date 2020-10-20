@@ -1,0 +1,11 @@
+<p>observer works!</p>
+<input type="text" #txtConteudoDisparado>
+<input type="button" (click)="onDisparador(txtConteudoDisparado.value)" value="Disparador">
+<a routerLink="/disparador2"> ir Disparador2</a>
+<p>valordisparadoRegistradoServico: {{ valordisparadoRegistradoServico }}</p>
+
+<p></p>
+<app-observador1 *ngIf="_valorDisparado != 'deletar'"></app-observador1>
+
+<p></p>
+<app-observador2></app-observador2>

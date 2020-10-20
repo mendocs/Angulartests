@@ -1,0 +1,31 @@
+<p>modulo1-filho1 works!</p>
+
+<a routerLink="/modulo1"> ir modulo1 </a>
+
+<p></p>
+queryParametros:  {{ queryParametros }}
+
+<p></p>
+Parametros:  {{ Parametros }}
+<p></p>
+
+output:  {{ variavel_output }}
+
+
+
+<router-outlet ></router-outlet>
+
+<app-modulo1-filho1-detalhe [variavelnput]="true"  (variavelOutputEvento) = "MetodoDisparadoVariavelOutput($event)">
+
+    <div principal> app-modulo1-filho1-detalhe_1 Este é o título que vai para o H1 {{ Parametros }}</div>
+    <div auxiliar>Este é o título auxiliar que vai para o H3</div>
+
+</app-modulo1-filho1-detalhe>
+
+
+<app-modulo1-filho1-detalhe [variavelnput]="true"  (variavelOutputEvento) = "MetodoDisparadoVariavelOutput($event)">
+
+    <div principal> app-modulo1-filho1-detalhe_2 Este é o título que vai para o H1 {{ Parametros }}</div>
+    <div auxiliar>Este é o título auxiliar que vai para o H3</div>
+
+</app-modulo1-filho1-detalhe>

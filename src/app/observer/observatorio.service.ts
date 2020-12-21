@@ -36,9 +36,22 @@ export class ObservatorioService {
 
   GetHttpIP () : Observable<{}>
   {
-	return this.http.get("http://httpbin.org/ip");
+     return this.http.get("http://httpbin.org/ip");
+     //return this.http.get("https://localhost:5001/v1/products");
+
   }
 
+
+  GetHttpApiRest () : Observable<{}>
+  {
+
+	 return this.http.get("api/v1/products/2");
+
+	 //return this.http.get("https://localhost:5001/v1/products/2");
+
+
+
+  }
 
 
   GetHttpURL()

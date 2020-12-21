@@ -4,6 +4,8 @@ import { Subscription, Subject, Observable } from 'rxjs';
 import {from, of} from 'rxjs';
 import { switchMap , map, take} from 'rxjs/operators';
 import { HtmlIp } from '../html-ip';
+import { RestApiProduto } from '../restAPiModel';
+
 
 @Component({
   selector: 'app-observador1',
@@ -19,6 +21,7 @@ export class Observador1Component implements OnInit, OnDestroy {
 
   valorObservadoIP:String="";
   valorObservadoURL:String="";
+  valorObservadoAPI:String="";
 // LocalObjetoObservavel$ : Observable<number>;
  //LocalObjetoObservavel$ : Observable<string[]>;
   LocalObjetoObservavel$ : Observable<string>;
@@ -72,9 +75,19 @@ export class Observador1Component implements OnInit, OnDestroy {
 		complete: () => console.log('Completo myObserverIP'),
 	  };
 
+
+	  const myObserverApi = {
+		next: (valor : RestApiProduto) => {console.log(valor); return this.valorObservadoAPI = valor.title}, //valor.ip,
+		//next: valor  => {console.log(valor); this.valorObservadoIP = String(valor["ip"])}, //valor.ip,
+		error: err => this.valorObservadoAPI = err,
+		complete: () => console.log('Completo myObserverIP'),
+	  };
+
 	this.ObservatorioServiceObj.GetHttpIP().subscribe(myObserverIP);
 
 	this.ObservatorioServiceObj.GetHttpURL().subscribe(myObserverURL);
+
+	this.ObservatorioServiceObj.GetHttpApiRest().subscribe(myObserverApi);
 
 
 

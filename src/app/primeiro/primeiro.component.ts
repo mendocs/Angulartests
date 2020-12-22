@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit, HostListener, ViewChildren} from '@angular/core';
 import { Subject } from 'rxjs';
 import {tap} from 'rxjs/operators';
+import {environment} from '../../environments/environment'
 
 @Component({
   selector: 'app-primeiro',
@@ -22,7 +23,8 @@ export class PrimeiroComponent implements OnInit , AfterViewInit{
 
 
 
-  treste: string = "variavelInterpolada";
+  treste: string = environment.ambiente; //"variavelInterpolada";
+
 
   observable1_variavel: string = "observable1_variavel";
   observable2_variavel: string = "observable2_variavel";
@@ -55,7 +57,7 @@ export class PrimeiroComponent implements OnInit , AfterViewInit{
 
 
 
-    this.treste = "variavelInterpolada3";
+    //this.treste = "variavelInterpolada3";
 
 
     const myObserver = {

@@ -45,7 +45,11 @@ export class ObservatorioService {
   GetHttpApiRest () : Observable<{}>
   {
 
-	 return this.http.get("api/v1/products/2");
+	 //return this.http.get("api/v1/products/2");
+
+	 return this.http.get("https://testeef.azurewebsites.net/v1/products/2");
+
+
 
 	 //return this.http.get("https://localhost:5001/v1/products/2");
 

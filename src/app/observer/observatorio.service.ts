@@ -36,7 +36,7 @@ export class ObservatorioService {
 
   GetHttpIP () : Observable<{}>
   {
-     return this.http.get("http://httpbin.org/ip");
+     return this.http.get("https://httpbin.org/ip");
      //return this.http.get("https://localhost:5001/v1/products");
 
   }
@@ -57,7 +57,7 @@ export class ObservatorioService {
   GetHttpURL()
   {
 
-	return this.GetHttpIP().pipe(switchMap (x => this.http.get("http://httpbin.org/get")));
+	return this.GetHttpIP().pipe(switchMap (x => this.http.get("https://httpbin.org/get")));
   }
 
 

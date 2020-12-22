@@ -1,0 +1,11 @@
+  {
+	"/api/*": {
+	  "target": "https://testeef.azurewebsites.net",
+	  "secure": false,
+	  "logLevel": "debug",
+	  "changeOrigin": true,
+	  "pathRewrite": {
+		"^/api": ""
+	  }
+	}
+  }

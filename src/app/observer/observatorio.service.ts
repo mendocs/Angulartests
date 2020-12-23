@@ -3,6 +3,7 @@ import { Subject, Observable } from 'rxjs';
 import {from, of} from 'rxjs';
 import { switchMap , map, debounceTime, take} from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,10 @@ export class ObservatorioService {
 
   GetHttpIP () : Observable<{}>
   {
-     return this.http.get("https://httpbin.org/ip");
+
+
+	return this.http.get(environment.httpbin);
+     //return this.http.get("https://httpbin.org/ip");
      //return this.http.get("https://localhost:5001/v1/products");
 
   }
@@ -45,7 +49,11 @@ export class ObservatorioService {
   GetHttpApiRest () : Observable<{}>
   {
 
-	 return this.http.get("api/v1/products/2");
+	 //return this.http.get("api/v1/products/2");
+
+	 return this.http.get(environment.UrlApi + "/v1/products/2");
+
+
 
 	 //return this.http.get("https://testeef.azurewebsites.net/v1/products/2");
 

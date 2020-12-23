@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  ambiente: "desenvolvimento"
+  ambiente: "desenvolvimento",
+  httpbin : "https://httpbin.org/ip",
+  UrlApi : "https://testeef.azurewebsites.net"
+
 };
 
 /*

@@ -4,3 +4,6 @@ export const environment = {
   httpbin : "https://httpbin.org/ip",
   UrlApi : "https://testeef.azurewebsites.net"
 };
+
+
+//https://testeef.azurewebsites.net

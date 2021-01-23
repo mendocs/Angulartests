@@ -1,3 +1,32 @@
+#square{
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+#parallaxTeste {
+	/* The image used */
+	background-image: url("../../assets/images/background/muro.jpg");
+
+	//background-image: url("assets/images/background/muro.jpg");
+
+	/* Full height */
+	height: 100%;
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: 0px -100px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+
+  }
+
+
 .custom-list-group {
 	display: flex;
 	flex-direction: column;
@@ -20,3 +49,76 @@
 	background-color:yellow;
 	border-color: #FF4461;
   }
+
+  a {
+	color: #fff;
+	background-color: #333;
+	transition: all 1s ease-out;
+  }
+
+  a:hover,
+  a:focus {
+	color: #333;
+	background-color: #fff;
+  }
+
+
+  .container div {
+	color: #fff;
+	background-color: #333;
+	transition: all 1s ease-out;
+  }
+
+
+  .container :hover >div , .container :focus  > div {
+	color: #333;
+	background-color: #fff;
+  }
+
+  .animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+ }
+ @-webkit-keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+ }
+ @keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+ }
+ .fadeIn {
+   -webkit-animation-name: fadeIn;
+   animation-name: fadeIn;
+ }
+
+ @-webkit-keyframes fadeInRight {
+	0% {
+	   opacity: 1;
+	   -webkit-transform: translateX(1120px);
+	}
+	100% {
+	   opacity: 1;
+	   -webkit-transform: translateX(0);
+	}
+ }
+
+ @keyframes fadeInRight {
+	0% {
+	   opacity: 1;
+	   transform: translateX(11120px);
+	}
+	100% {
+	   opacity: 1;
+	   transform: translateX(0);
+	}
+ }
+
+ .fadeInRight {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+ }
+
+

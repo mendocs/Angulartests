@@ -20,7 +20,8 @@ import { PrefixoTestePipe } from './prefixo-teste.pipe';
 import {FormModule } from './form/form.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BootComponent } from './boot/boot.component';
-import { NgxbootstrapModule } from './modules/ngxbootstrap/ngxbootstrap.module'
+import { NgxbootstrapModule } from './modules/ngxbootstrap/ngxbootstrap.module';
+import { ParallaxDirective } from './diretivas/parallax.directive'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NgxbootstrapModule } from './modules/ngxbootstrap/ngxbootstrap.module'
     DiretivasComponent,
     CondicaoFalsaDirective,
 	PrefixoTestePipe,
-	BootComponent
+	BootComponent,
+	ParallaxDirective
   ],
   imports: [
     BrowserModule,

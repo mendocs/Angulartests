@@ -6,9 +6,11 @@ export const environment = {
   production: false,
   ambiente: "desenvolvimento",
   httpbin : "https://httpbin.org/ip",
-  UrlApi : "https://testeef.azurewebsites.net"
+  UrlApi : "api"
 
 };
+
+//https://localhost:5001
 
 /*
  * For easier debugging in development mode, you can import the following file

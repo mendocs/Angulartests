@@ -5,6 +5,7 @@ import {DataService} from '../db/data.service';
 import { noop, Observable, Observer, of , Subscriber} from 'rxjs';
 import { map, switchMap, tap, mergeMap } from 'rxjs/operators';
 import { Cidade } from '../db/cidade';
+import { ProgressbarComponent } from 'ngx-bootstrap/progressbar';
 
 interface DataSourceType {
 	id: number;
@@ -112,37 +113,53 @@ export class BootComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.spinner.show();
+		this.spinner.show();
 
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-	}, 1000);
+		setTimeout(() => {
+		/** spinner ends after 5 seconds */
+		this.spinner.hide();
+		}, 1000);
 
-//campo busca http
 
-this.suggestions$ = new Observable((observer: Observer<string>) => {
-	observer.next(this.search);
-  }).pipe(
-	switchMap((query: string) => {
-	  if (query) {
-		// using github public api to get users by name
-		console.log("http-" + this.dataService1.getCidadesNomehttp(query))
-		return this.dataService1.getCidadesNomehttp(query).pipe(
-		  map((data: Cidade[]) => data || []),
-		  tap(() => noop, err => {
-			// in case of http error
-			this.errorMessage = err && err.message || 'Something goes wrong';
-		  })
+
+		this.suggestions$ = new Observable((observer: Observer<string>) => {
+			observer.next(this.search);
+		}).pipe(
+			switchMap((query: string) => {
+			if (query) {
+				// using github public api to get users by name
+				console.log("http-" + this.dataService1.getCidadesNomehttp(query))
+				return this.dataService1.getCidadesNomehttp(query).pipe(
+				map((data: Cidade[]) => data || []),
+				tap(() => noop, err => {
+					// in case of http error
+					this.errorMessage = err && err.message || 'Something goes wrong';
+				})
+				);
+			}
+
+			//return of([]);
+			})
 		);
-	  }
-
-	  //return of([]);
-	})
-  );
 
 
 
+		let posicao = document.getElementById("roundBrasil").offsetTop + 100 ;
+		document.getElementById("roundBrasil").hidden = true;
+
+
+		window.onscroll = function() {scrollFunction()};
+		function scrollFunction() {
+		  if (document.body.scrollTop > posicao || document.documentElement.scrollTop > posicao) {
+			document.getElementById("roundBrasil").hidden = false;
+			document.getElementById("roundBrasil").classList.add("fadeInRight");
+			document.getElementById("roundBrasil").classList.add("animated");
+
+			document.getElementById("textRoud").innerText =  document.documentElement.scrollTop.toString();
+
+
+		  }
+		}
 
 
   }

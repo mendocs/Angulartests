@@ -44,7 +44,7 @@ export class PrimeiroComponent implements OnInit , AfterViewInit{
 
 	 this.campovariavaelElementList.forEach(function(name){
 		console.log (name);
-		name["nativeElement"].style.background = "green";
+		name["nativeElement"].style.background = "gray";
 	  });
 
 

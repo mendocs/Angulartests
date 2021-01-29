@@ -75,50 +75,15 @@
 	background-color: #fff;
   }
 
-  .animated {
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;
- }
- @-webkit-keyframes fadeIn {
-   0% {opacity: 0;}
-   100% {opacity: 1;}
- }
- @keyframes fadeIn {
-   0% {opacity: 0;}
-   100% {opacity: 1;}
- }
- .fadeIn {
-   -webkit-animation-name: fadeIn;
-   animation-name: fadeIn;
- }
-
- @-webkit-keyframes fadeInRight {
-	0% {
-	   opacity: 1;
-	   -webkit-transform: translateX(1120px);
-	}
-	100% {
-	   opacity: 1;
-	   -webkit-transform: translateX(0);
-	}
- }
-
- @keyframes fadeInRight {
-	0% {
-	   opacity: 1;
-	   transform: translateX(11120px);
-	}
-	100% {
-	   opacity: 1;
-	   transform: translateX(0);
-	}
- }
-
- .fadeInRight {
-	-webkit-animation-name: fadeInRight;
-	animation-name: fadeInRight;
- }
 
 
+  .item1 {
+	width: 200px;
+	height: 200px;
+	margin: 50px auto;
+	padding-top: 75px;
+	background: #ccc;
+	text-align: center;
+	color: #FFF;
+	font-size: 3em;
+  }

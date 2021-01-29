@@ -30,9 +30,12 @@
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
 			  "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+			  "./node_modules/aos/dist/aos.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+				"./node_modules/aos/dist/aos.js"
+			]
           },
           "configurations": {
             "production": {
@@ -97,10 +100,14 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+			  "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+			  "./node_modules/aos/dist/aos.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+				"./node_modules/aos/dist/aos.js"
+
+			]
           }
         },
         "lint": {

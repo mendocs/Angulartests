@@ -6,6 +6,8 @@ import { noop, Observable, Observer, of , Subscriber} from 'rxjs';
 import { map, switchMap, tap, mergeMap } from 'rxjs/operators';
 import { Cidade } from '../db/cidade';
 import { ProgressbarComponent } from 'ngx-bootstrap/progressbar';
+import { AotSummaryResolver } from '@angular/compiler';
+import * as AOS from 'aos';
 
 interface DataSourceType {
 	id: number;
@@ -113,6 +115,7 @@ export class BootComponent implements OnInit {
 
   ngOnInit(): void {
 
+		AOS.init();
 		this.spinner.show();
 
 		setTimeout(() => {
@@ -142,7 +145,7 @@ export class BootComponent implements OnInit {
 			})
 		);
 
-
+/*
 
 		let posicao = document.getElementById("roundBrasil").offsetTop + 100 ;
 		document.getElementById("roundBrasil").hidden = true;
@@ -160,7 +163,7 @@ export class BootComponent implements OnInit {
 
 		  }
 		}
-
+*/
 
   }
 

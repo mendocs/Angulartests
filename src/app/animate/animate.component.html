@@ -1,0 +1,163 @@
+<p>animate works!</p>
+
+<div >
+	<div class="row">
+		<div class="1col-sm-3 1col-4">
+			<div id="scrollSpyDiv">
+				<div (click)="triggerScrollTo('Sobre_spied')">Sobre
+					<ng-container *ngIf="currentSection==='Sobre_spied'">O</ng-container>
+				</div>
+				<div (click)="triggerScrollTo('terapias_spied')">terapias
+					<ng-container *ngIf="currentSection==='terapias_spied'">O</ng-container>
+				</div>
+				<div (click)="triggerScrollTo('terapeuta_spied')">terapeuta
+					<ng-container *ngIf="currentSection==='terapeuta_spied'">O</ng-container>
+				</div>
+				<div (click)="triggerScrollTo('localizacao_spied')">localizacao
+					<ng-container *ngIf="currentSection==='localizacao_spied'">O</ng-container>
+				</div>
+				<br/>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-12"  id="parentDiv" appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)" >
+
+			<!--
+			<div id="parentDiv" appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)">
+				<div id="section1" class="bg-success">
+					<h1>Section 1</h1>
+					<p>Try to scroll this section and look at the navigation list while scrolling!</p>
+				</div>
+				<div id="section2" class="bg-warning">
+					<h1>Section 2</h1>
+					<p>Try to scroll this section and look at the navigation list while scrolling!</p>
+				</div>
+				<div id="section3" class="bg-secondary">
+					<h1>Section 3</h1>
+					<p>Try to scroll this section and look at the navigation list while scrolling!</p>
+				</div>
+				<div id="section4" class="bg-danger">
+					<h1>Section 4-1</h1>
+					<p>Try to scroll this section and look at the navigation list while scrolling!</p>
+				</div>
+			</div>
+			-->
+
+
+			<div id="Sobre_spied" #Sobre_spied></div>
+
+				<carousel [noPause]="false" class="text-dark" >
+					<slide>
+						<a (click)="triggerScrollTo('terapeuta_spied')" style="cursor: pointer ;">
+							<img src="assets/images/carrosel/massagem1.jpg" alt="first slide" style=" width: 1200px;">
+							<div class="carousel-caption d-none d-md-block text-dark">
+								<h1> O espaço e o Terapeuta	</h1>
+								<h2>Mais saúde, bem-estar e qualidade de vida com Massoterapia Integral em espaço exclusivamente feminino</h2>
+							</div>
+						</a>
+					</slide>
+					<slide>
+						<a (click)="triggerScrollTo('terapias_spied')" style="cursor: pointer ;">
+						<img src="assets/images/carrosel/massagem2.jpg" alt="second slide" style=" width: 1200px;">
+							<div class="carousel-caption d-none d-md-block text-dark">
+								<h1>Terapias</h1>
+								<h2>Massagem relaxante, modeladora, drenagem linfática, Shiatsu, reflexologia, aromaterapia e mais...</h2>
+							</div>
+						</a>
+					</slide>
+					<slide>
+						<img src="assets/images/carrosel/massagem3.jpg" alt="third slide" style=" width: 1200px;">
+						<div class="carousel-caption d-none d-md-block text-dark">
+							<h1>Beneficios</h1>
+							<h2>Benefícios da massagem: relaxamento, apoio à prática esportiva, tratamento da dor, estética, edema, cuidados pré e pós-cirúrgicos, consciência corporal,  e mais...</h2>
+						</div>
+					</slide>
+					<slide>
+						<img src="assets/images/carrosel/massagem4.jpg" alt="third slide" style=" width: 1200px;">
+						<div class="carousel-caption d-none d-md-block text-dark">
+						<h1>massoterapia</h1>
+						<h2>Aqui a massoterapia é personalizada e individualizada, de acordo com as necessidade de cada cliente</h2>
+						</div>
+					</slide>
+				</carousel>
+
+
+			<div class="secaoAzul">jj</div>
+
+			<div id="terapias_spied" #terapias_spied></div>
+			<div  style="float: inline-start; height: 600px;">
+				<div appParallax [ratio]="0.08" [BackGround]="true" [BackGroundImageHeigth]=000 class="px-5 text-center parallaxPadrao parallaxleft">
+					<h1>terapias</h1>
+				</div>
+				<div  appParallax [ratio]="-0.1" [BackGround]="true"  [BackGroundVerticalPosition]=100  [BackGroundImageHeigth]=000 class="px-5 text-center parallaxPadrao parallaxRight">
+					<h1>terapias</h1>
+				</div>
+			</div>
+
+			<div class="item1" data-aos="fade-up" data-aos-duration="3000">1</div>
+
+			<br><br><br><br>
+
+			<div class="card" style="width:400px" data-aos="zoom-in" data-aos-duration="3000">
+				<img class="card-img-top" src="assets/images/card/brasil.jpg" alt="Card image" >
+
+				<div class="card-body">
+				<h4 class="card-title">John Doe</h4>
+				<p class="card-text">Some example text.</p>
+				<a href="#" class="btn btn-primary">See Profile</a>
+				</div>
+			</div>
+
+			<br><br>
+
+			<div id="section32" > </div>
+
+			<div class="secaoAzul">jj</div>
+
+			<div id="terapeuta_spied" #terapeuta_spied></div>
+			<div appParallax [ratio]="-.2"  [BackGround]="true"  class="px-5 text-center parallaxTeste">
+				<div class="parallaxOil" appParallax [ratio]="0.1" [BackGround]="true" [BackGroundVerticalPosition]=100 [BackGroundImageHeigth]=550>
+					<div class="parallaxOil" appParallax [ratio]="-0.45" [BackGround]="true" [BackGroundVerticalPosition]=80 [BackGroundImageHeigth]=250>
+						<div class="parallaxText">
+
+
+
+
+							<br><br><br>
+
+							<br><br><br>
+							<br><br><br>
+							<div style="text-align: right"><img src="assets/images/background/pedra.png" appParallax [ratio]="0.70"  [BackGround]="false" style=" position: fixed; float: right; width: 250px;height: 250px;;"  /></div>
+							<br><br><br>
+							<h1 > terapeuta </h1>
+							<br><br><br>
+
+							<h2 >
+							bem estar fisico e mental beneficios
+							</h2>
+							<br><br><br>
+							<h3 >
+								bem estar fisico e mental beneficios
+								</h3>
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="secaoAzul">jj</div>
+
+			<div id="localizacao_spied" #localizacao_spied></div>
+			<div id="section42" > </div>
+
+			<h1 > localizacao </h1>
+			<div class="item1" data-aos="fade-up" data-aos-duration="3000">1</div>
+			<div class="item1" data-aos="fade-left" data-aos-duration="3000">1</div>
+		</div>
+	</div>
+</div>
+
+

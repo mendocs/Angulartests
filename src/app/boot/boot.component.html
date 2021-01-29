@@ -1,4 +1,4 @@
-
+<!--
 <p>bootstrap componente works!</p>
 
 xs: pink col1;;
@@ -14,6 +14,9 @@ aleração que será revertida (comit 54) , texto comit (6), texto que seria com
 	<div class="col py-3 px-md-5 border bg-light">Custom column padding</div>
 	<div class="col py-3 px-md-5 border bg-light">Custom column padding</div>
   </div>
+
+
+  <div class="item" data-aos="fade-up" data-aos-duration="2000">1</div>
 
 <div id="parallaxTeste"  appParallax [ratio]="-0.2">
 	Where does it come from?
@@ -66,11 +69,13 @@ aleração que será revertida (comit 54) , texto comit (6), texto que seria com
 
 <br><br>
 
+
+
 <div appParallax [ratio]="-0.2" id="square"></div>
 
-<div class="animated fadeInRight">
+<div appFade>
 
-<span class="badge badge-pill badge-success">Success</span>
+	<span class="badge badge-pill badge-success">Success</span>
 
 </div>
 
@@ -239,16 +244,16 @@ botão spinner
 		 {{ errorMessage }}
 	   </div>
 
-	<div class="container">
+	<div class="container" data-aos="zoom-in">
 
-	   <p id="textRoud"> image round </p> <img id="roundBrasil" src="assets/images/card/cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre">
+	   <p id="textRoud"> image round </p> <img  id="roundBrasil" src="assets/images/card/cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre">
 	</div>
 
 
 <p>Card</p>
 
-<div class="card" style="width:400px">
-	<img class="card-img-top" src="assets/images/card/brasil.jpg" alt="Card image">
+<div class="card" style="width:400px" >
+	<img class="card-img-top" src="assets/images/card/brasil.jpg" alt="Card image" >
 
 	<div class="card-body">
 	  <h4 class="card-title">John Doe</h4>
@@ -257,13 +262,13 @@ botão spinner
 	</div>
   </div>
 
-
+-->
 
   <p> Carrosel</p>
 
-  <carousel>
+  <carousel style="height: 500px;">
 	<slide>
-	  <img src="assets/images/carrosel/imagem1.jpg" alt="first slide" style="display: block; width: 100%;">
+	  <img src="assets/images/carrosel/imagem1.jpg" alt="first slide" style="display: block; width: 100%; height: 100%;">
 	  <div class="carousel-caption d-none d-md-block">
 		<h3>First slide label</h3>
 		<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

@@ -21,7 +21,14 @@ import {FormModule } from './form/form.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BootComponent } from './boot/boot.component';
 import { NgxbootstrapModule } from './modules/ngxbootstrap/ngxbootstrap.module';
-import { ParallaxDirective } from './diretivas/parallax.directive'
+import { ParallaxDirective } from './diretivas/parallax.directive';
+import { FadeDirective } from './diretivas/fade.directive';
+import { AnimateComponent } from './animate/animate.component'
+import { RfxParallaxModule } from 'rfx-parallax';
+import { NgxParallaxModule } from '@yoozly/ngx-parallax';
+import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { ScrollSpyDirective } from './diretivas/scroll-spy.directive';
 
 @NgModule({
   declarations: [
@@ -38,7 +45,10 @@ import { ParallaxDirective } from './diretivas/parallax.directive'
     CondicaoFalsaDirective,
 	PrefixoTestePipe,
 	BootComponent,
-	ParallaxDirective
+	ParallaxDirective,
+	FadeDirective,
+	AnimateComponent,
+	ScrollSpyDirective
   ],
   imports: [
     BrowserModule,
@@ -47,9 +57,13 @@ import { ParallaxDirective } from './diretivas/parallax.directive'
 	FormModule,
 	HttpClientModule,
 	BrowserAnimationsModule,
-	NgxbootstrapModule
+	NgxbootstrapModule,
+	RfxParallaxModule,
+	NgxParallaxModule,
+	NgxParallaxScrollModule,
+	ScrollToModule.forRoot()
   ],
-  providers: [AddremoveService,HttpClientModule],
+  providers: [AddremoveService,HttpClientModule, RfxParallaxModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

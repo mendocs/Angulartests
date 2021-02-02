@@ -85,6 +85,61 @@
 			<div class="secaoAzul">jj</div>
 
 			<div id="terapias_spied" #terapias_spied></div>
+			<div style="background-color: azure; background-image: url(assets/images/background/massage-therapy-performance.jpg); background-repeat:no-repeat; background-position: center; ">
+				<angular-tag-cloud [config]="options" [data]="data"  [randomizeAngle]="true"  [zoomOnHover]="zoomOnHoverOptions" (clicked)="logClicked($event)" [strict]="true"></angular-tag-cloud>
+			</div>
+
+
+			{{currentTerapia}}
+
+			<div class="col-sm-12 col-12" *ngIf= "currentTerapia.length > 0 ">
+				<div class="conteinerTerapia "  >
+
+					<h1 style="text-align: center;"> {{currentTerapia}} </h1>
+
+						<div class="col">
+							<div class="circle" data-aos="fade-up"></div>
+							<h2 class="text" data-aos="flip-left" data-aos-delay="300">Alívio de dores</h2>
+						</div>
+						<div class="col">
+							<div class="circle" data-aos="fade-up"></div>
+							<h2 class="text" data-aos="flip-left" data-aos-delay="300">Melhora da circulação sanguínea e linfática</h2>
+						</div>
+						<div class="col">
+							<div class="circle" data-aos="fade-up"></div>
+							<h2 class="text" data-aos="flip-left" data-aos-delay="300">Melhora da nutrição dos tecidos</h2>
+						</div>
+						<div class="col">
+							<div class="circle" data-aos="fade-up"></div>
+							<h2 class="text" data-aos="flip-left" data-aos-delay="300">Melhora do movimento articular</h2>
+						</div>
+
+
+
+
+				</div>
+
+				<div >
+					<button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+							[attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">mostrar detalhes
+					</button>
+					<hr>
+					<div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+					<div class="well well-lg card card-block card-header">
+						<p> A massagem relaxante promove, como o próprio nome já diz, um relaxamento muscular e geral do organismo. </p>
+						<p>Através de manobras de deslizamento, pressão, fricção, amassamento e percussão, o massoterapeuta consegue atuar sobre vários sistemas, trazer inúmeras melhorias e benefícios; veja a lista abaixo.</p>
+						<p> O massoterapeuta pode integrar técnicas que poderão colaborar no auxílio do relaxamento muscular e geral do organismo, sempre em concordância com as necessidades e preferências da cliente. </p>
+						<p>Veja algumas dessas técnicas na lista abaixo.</p>
+						<p>Mas acima de tudo, a massagem relaxante proporciona, através do toque, acolhimento, atenção, respeito e cuidado, sendo uma poderosa aliada na busca por uma vida mais saudável e feliz.</p>
+
+					</div>
+					</div>
+				</div>
+
+		   </div>
+
+
+			<!--
 			<div  style="float: inline-start; height: 600px;">
 				<div appParallax [ratio]="0.08" [BackGround]="true" [BackGroundImageHeigth]=000 class="px-5 text-center parallaxPadrao parallaxleft">
 					<h1>terapias</h1>
@@ -93,8 +148,12 @@
 					<h1>terapias</h1>
 				</div>
 			</div>
+			-->
 
-			<div class="item1" data-aos="fade-up" data-aos-duration="3000">1</div>
+			<br>
+
+			<!--<div class="item1" data-aos="fade-up" data-aos-duration="3000">1</div>
+
 
 			<br><br><br><br>
 
@@ -107,8 +166,9 @@
 				<a href="#" class="btn btn-primary">See Profile</a>
 				</div>
 			</div>
-
 			<br><br>
+		-->
+
 
 			<div id="section32" > </div>
 

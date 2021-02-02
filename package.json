@@ -21,6 +21,7 @@
     "@angular/router": "~10.0.6",
     "@nicky-lenaers/ngx-scroll-to": "^9.0.0",
     "@yoozly/ngx-parallax": "^0.2.3",
+    "angular-tag-cloud-module": "^5.2.2",
     "aos": "^2.3.4",
     "bootstrap": "4.1.1",
     "ngx-bootstrap": "^6.1.0",

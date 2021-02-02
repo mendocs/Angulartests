@@ -1,4 +1,25 @@
 
+
+/* General Layout */
+angular-tag-cloud.custom-css {
+	border: 8px solid black;
+  }
+
+  /* no decoration for links */
+  ::ng-deep angular-tag-cloud.custom-css a {
+	text-decoration: none;
+	color: inherit;
+  }
+  ::ng-deep angular-tag-cloud.custom-css a:hover {
+	color: rgb(255, 255, 255);
+  }
+
+  ::ng-deep angular-tag-cloud.custom-css span.w10 { font-size: 380%; }
+
+
+  ::ng-deep angular-tag-cloud.custom-css span.w10 { color: #c3dd90;  background-color: black;}
+
+
 #scrollSpyDiv
 {
 	top: 420px;
@@ -18,6 +39,15 @@ ul.nav-pills {
 	height: 500px;
 }
 
+
+
+.circle  {
+	height: 30px;
+	width: 30px;
+	margin: 20px 0px;
+	border-radius: 100%;
+	background: #789b51;
+  }
 
 .item {
 	width: 1000px;
@@ -105,7 +135,41 @@ ul.nav-pills {
 	background-position: 100% 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
+
 }
+
+
+.conteinerTerapia
+{
+	width: 100%;
+	height: 600px;
+
+	background-attachment: fixed;
+	background-image: url("../../assets/images/background/Urban-Massage-background.jpg");
+	background-size: auto !important;
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	//text-align: center;
+	//float: left;
+
+	display: flex;
+	//align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: nowrap;
+
+}
+
+.col {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	text-align: left;
+  }
+
+
 
 
   .parallaxTeste {

@@ -4,6 +4,7 @@ import {
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
+import { PrimeiroComponent } from '../primeiro/primeiro.component';
 import {AddRemoveFilhoComponent} from './add-remove-filho/add-remove-filho.component';
 import {AddremoveService } from './addremove.service';
 
@@ -23,19 +24,39 @@ export class AddRemoveComponent implements OnInit {
   // Expose class so that it can be used in the template
   AddRemoveFilhoComponentClass = AddRemoveFilhoComponent;
 
+  PrimeiroComponentClass = PrimeiroComponent;
+
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private addremoveService: AddremoveService) {
   }
+
+
+ loadcomponent (componentClass: Type<any>)
+ {
+
+    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentClass);
+
+	this.container.clear();
+
+   let component = this.container.createComponent(componentFactory);
+
+   let currentComponent = component.instance;
+   currentComponent.selfRef = currentComponent;
+
+ }
+
 
   addComponent(componentClass: Type<any>) {
     // Create component dynamically inside the ng-template
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentClass);
 
    let component = this.container.createComponent(componentFactory);
+
+
    component.instance.nomeAddFilho = "variavel imput nomeAddFilho";
 
    let currentComponent = component.instance;
    currentComponent.selfRef = currentComponent;
-    
+
 
     // Push the component so that we can keep track of which components are created
     this.components.push(component);
@@ -55,7 +76,7 @@ export class AddRemoveComponent implements OnInit {
     if (componentIndex !== -1) {
       // Remove component from both view and array
       this.container.remove(componentIndex);
-      
+
       //this.components.splice(componentIndex, 1);
     }
   }

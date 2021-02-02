@@ -29,6 +29,7 @@ import { NgxParallaxModule } from '@yoozly/ngx-parallax';
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { ScrollSpyDirective } from './diretivas/scroll-spy.directive';
+import { TagCloudModule } from 'angular-tag-cloud-module';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ScrollSpyDirective } from './diretivas/scroll-spy.directive';
 	RfxParallaxModule,
 	NgxParallaxModule,
 	NgxParallaxScrollModule,
-	ScrollToModule.forRoot()
+	ScrollToModule.forRoot(),
+	TagCloudModule
   ],
   providers: [AddremoveService,HttpClientModule, RfxParallaxModule],
   bootstrap: [AppComponent]

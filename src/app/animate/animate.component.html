@@ -1,6 +1,6 @@
 <p>animate works!</p>
 
-<div >
+<div class="container-fluid">
 	<div class="row">
 		<div class="1col-sm-3 1col-4">
 			<div id="scrollSpyDiv">
@@ -19,6 +19,9 @@
 				<br/>
 			</div>
 		</div>
+
+
+
 
 		<div class="col-sm-12 col-12"  id="parentDiv" appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)" >
 
@@ -44,12 +47,12 @@
 			-->
 
 
-			<div id="Sobre_spied" #Sobre_spied></div>
+				<div id="Sobre_spied" #Sobre_spied></div>
 
 				<carousel [noPause]="false" class="text-dark" >
 					<slide>
 						<a (click)="triggerScrollTo('terapeuta_spied')" style="cursor: pointer ;">
-							<img src="assets/images/carrosel/massagem1.jpg" alt="first slide" style=" width: 1200px;">
+							<img src="assets/images/carrosel/massagem1.jpg" alt="first slide" style="display: block; width: 100%;">
 							<div class="carousel-caption d-none d-md-block text-dark">
 								<h1> O espaço e o Terapeuta	</h1>
 								<h2>Mais saúde, bem-estar e qualidade de vida com Massoterapia Integral em espaço exclusivamente feminino</h2>
@@ -58,7 +61,7 @@
 					</slide>
 					<slide>
 						<a (click)="triggerScrollTo('terapias_spied')" style="cursor: pointer ;">
-						<img src="assets/images/carrosel/massagem2.jpg" alt="second slide" style=" width: 1200px;">
+						<img src="assets/images/carrosel/massagem2.jpg" alt="second slide" style="display: block; width: 100%;">
 							<div class="carousel-caption d-none d-md-block text-dark">
 								<h1>Terapias</h1>
 								<h2>Massagem relaxante, modeladora, drenagem linfática, Shiatsu, reflexologia, aromaterapia e mais...</h2>
@@ -66,20 +69,66 @@
 						</a>
 					</slide>
 					<slide>
-						<img src="assets/images/carrosel/massagem3.jpg" alt="third slide" style=" width: 1200px;">
+						<img src="assets/images/carrosel/massagem3.jpg" alt="third slide" style="display: block; width: 100%;">
 						<div class="carousel-caption d-none d-md-block text-dark">
 							<h1>Beneficios</h1>
 							<h2>Benefícios da massagem: relaxamento, apoio à prática esportiva, tratamento da dor, estética, edema, cuidados pré e pós-cirúrgicos, consciência corporal,  e mais...</h2>
 						</div>
 					</slide>
 					<slide>
-						<img src="assets/images/carrosel/massagem4.jpg" alt="third slide" style=" width: 1200px;">
+						<img src="assets/images/carrosel/massagem4.jpg" alt="third slide" style="display: block; width: 100%;">
 						<div class="carousel-caption d-none d-md-block text-dark">
 						<h1>massoterapia</h1>
 						<h2>Aqui a massoterapia é personalizada e individualizada, de acordo com as necessidade de cada cliente</h2>
 						</div>
 					</slide>
 				</carousel>
+
+
+
+
+
+				<div class="jumbotron" style="background-image: url(assets/images/background/massage-therapy-performance.jpg); background-size: 100%;">
+
+					<div class="col">
+						<div class="circle mt-2 mr-2" data-aos="fade-up" ></div>
+						<h2 class="text" data-aos="flip-left" data-aos-delay="300"><h1> home  / nome da terapia </h1></h2>
+					</div>
+
+
+
+
+					<h6>
+						<p>São diversos os benefícios da massoterapia: Relaxamento muscular, alívio de dores, melhora da circulação sanguínea e linfática, melhora da nutrição dos tecidos, remodelação corporal, melhora do movimento articular, tonifica a musculatura para a prática esportiva, auxilia na prevenção de lesões, auxilia na recuperação muscular, auxilia nos cuidados pré e pós-cirúrgicos, estimula o peristaltismo intestinal, reequilibra o nível energético, aumenta a liberação de endorfinas, serotonina e ocitocina, auxilia no controle dos sintomas do estresse e da ansiedade, e contribui para o equilíbrio emocional. </p>
+						<p>Os vários estilos dessa antiga terapia são capazes de promover benefícios físicos, fisiológicos, energéticos e emocionais para a saúde e qualidade de vida. </p>
+
+					</h6>
+
+					<h4><p>A massoterapia e suas técnicas integrativas pode atuar em diversas patologias e condições de saúde, tais como:</p></h4>
+
+					<div style="font-weight: bolder; font-size: 120%;">
+						<accordion [isAnimated]="true" class=" transparent_class text-body" >
+							<accordion-group heading="" [isOpen]="isMassoterapiaCollapsed">
+								<div accordion-heading style="color: green; font-size: 130%;">A massoterapia lida com:</div>
+								<ul class="list-group  list-group-horizontal" style="color: black;">
+									<li class="list-group-item" *ngFor="let Massoterapiaitem of MassoterapiaList; index as i; first as isFirst">{{Massoterapiaitem}}</li>
+								</ul>
+							</accordion-group>
+							<accordion-group heading=""  [isOpen]="isMassoterapiaCollapsed">
+								<div accordion-heading style="color: green; font-size: 130%;">Contra-indicações:</div>
+								<div class="d-flex flex-wrap bg-light font-italic font-weight-bold" >
+									<div class="p-2 border rounded-lg border-top-0 border-right-0 border-left-0 border-bottom-3 border-success mx-2" *ngFor="let Massoterapiaitem of MassoterapiaList; index as i; first as isFirst">
+										<span class="shadow badge badge-pill badge-success" style="font-weight: bolder; font-size: 100%;">
+											{{Massoterapiaitem}}
+										</span>
+
+									</div>
+								</div>
+							</accordion-group>
+						</accordion>
+					</div>
+				  </div>
+
 
 
 			<div class="secaoAzul">jj</div>

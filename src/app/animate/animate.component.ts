@@ -13,9 +13,32 @@ import * as AOS from 'aos';
   styleUrls: ['./animate.component.scss']
 })
 export class AnimateComponent implements OnInit {
+
+	MassoterapiaList : string[] = [
+	"Dor lombar 999",
+	"Cervicalgia",
+	"Dor na coluna",
+	"Dor muscular/tendinite ",
+	"Dor articular/bursite (joelho, ombro, tornozelo,punho)",
+	"Torcicolo",
+	"Cefaléia tensional",
+	"Tensão pré-menstrual",
+	"Dor do Nervo ciático",
+	"Paralisia facial",
+	"Estresse/ansiedade/insônia",
+	"Edemas",
+	"Gestação",
+	"Pós-operatório"];
+
+
+
+
+
 	currentSection = 'section1';
 	currentTerapia :string = "";
 	isCollapsed = true;
+
+	isMassoterapiaCollapsed = true;
 
 	ngParallaxConf: IParallaxScrollConfig = {
 		parallaxSpeed: 1,
@@ -43,7 +66,7 @@ export class AnimateComponent implements OnInit {
 		realignOnResize : true,
 		randomizeAngle : true,
 		delay : 30,
-		font : "italic bold 8px Sans",
+		font : "italic bold 8px 'Indie Flower', cursive",
 		zoomOnHover : this.zoomOnHoverOptions
 		//background : "url(assets/images/background/zen.webp)"
 	  };
